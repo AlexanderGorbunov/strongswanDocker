@@ -120,20 +120,6 @@ EOF
 scorpEAP : EAP "eQt8s4WV3kUN"
 EOF
 
-#cat > /etc/strongswan.conf <<EOF
-#charon {
-#  send_vendor_id = yes
-#  plugins {
-#    eap-dynamic {
-#      preferred = mschapv2, tls, md5
-#    }
-#    dhcp {
-#      identity_lease = no
-#    }
-#  }
-#}
-#EOF
-
 	for client in "${clients_array[@]}"; do
 		bash generateuser.sh $client
 	done
